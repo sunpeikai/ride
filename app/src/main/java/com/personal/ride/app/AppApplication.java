@@ -1,13 +1,13 @@
-package com.personal.ride;
+package com.personal.ride.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RideApplication {
+public class AppApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RideApplication.class, args);
+        SpringApplication.run(AppApplication.class, args);
     }
 
 }
