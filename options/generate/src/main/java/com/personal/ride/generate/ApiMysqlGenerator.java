@@ -33,16 +33,16 @@ public class ApiMysqlGenerator {
 		AutoGenerator mpg = new AutoGenerator();
 
 		// ********* 可修改配置 begin **********
-		String dbUrl = "jdbc:mysql://39.98.141.194:33306/cwjy_dev?useUnicode=true&characterEncoding=utf-8&tinyInt1isBit=false";
-		String dbUserName = "cwjy_dev";
-		String dbPassword = "ZHXaW3@xIK";
+		String dbUrl = "jdbc:mysql://localhost:3306/ride?useUnicode=true&characterEncoding=utf-8&tinyInt1isBit=false";
+		String dbUserName = "root";
+		String dbPassword = "spkzq521";
 
 		// 表名忽略前缀
-		String tablePrefix = "cw";
+		String tablePrefix = "r";
 		// 目标表正则
-		String tableLike = "cw_utm_user";
+		String tableLike = "r_user";
 		// 模块名称
-		String modubleName = "utmuser";
+		String modubleName = "user";
 		// 是否需要导出
 		Boolean isExport = Boolean.FALSE;
 		// 是否有BigDecimal类型字段
@@ -51,7 +51,7 @@ public class ApiMysqlGenerator {
 		// ********* 可修改配置 end **********
 
 		// 目标基础包名
-		String packageName = "com.chuangrong.app";
+		String packageName = "com.personal.ride.app";
 
 		// 项目文件夹名称
 		String projectPackage = "cr-cwjy2";
@@ -64,17 +64,17 @@ public class ApiMysqlGenerator {
 
 		// ******* 以下勿动 *******
 		// controller父类
-		String superControllerClass = "com.chuangrong.app.base.BaseController";
+		String superControllerClass = "com.personal.ride.app.base.BaseController";
 		// request父类
-		String requestSuperClass = "com.chuangrong.core.common.request.BaseRequest";
+		String requestSuperClass = "com.personal.core.common.request.BaseRequest";
 		// 转换工具类
-		String commonUtilsClass = "com.chuangrong.core.common.util.CommonUtils";
+		String commonUtilsClass = "com.personal.core.common.util.CommonUtils";
 		// 统一返回值类
-		String responseClass = "com.chuangrong.app.response.R";
+		String responseClass = "com.personal.ride.app.response.R";
 		// 导出工具类
-		String exportUtilsClass = "com.chuangrong.core.common.util.EasyPoiUtil";
+		String exportUtilsClass = "com.personal.core.common.util.EasyPoiUtil";
 
-		String systemUserClass = "com.chuangrong.admin.system.entity.SysUser";
+		// String systemUserClass = "com.chuangrong.admin.system.entity.SysUser";
 
 		// 全局配置
 		GlobalConfig gc = new GlobalConfig();

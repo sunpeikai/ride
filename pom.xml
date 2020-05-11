@@ -14,6 +14,7 @@
         <module>app</module>
         <module>admin</module>
         <module>options</module>
+        <module>core</module>
     </modules>
 
 <!--    <parent>

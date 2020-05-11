@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: ${spring.profiles.active}
+  # 配置
+  application:
+    name: cr-app
+
+server:
+  port: 8072
+  servlet:
+    # 项目contextPath
+    context-path: /app
+cr-cwjy:
+  version: 1.0.0
