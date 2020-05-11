@@ -1,13 +1,12 @@
 <#assign packageArray=package.Controller?split(".")/>
 <#assign basePackage=packageArray[0]+"."+packageArray[1]+"."+packageArray[2]/>
 <#assign lastPackage=packageArray[packageArray?size-1]/>
-package ${basePackage}.${lastPackage}.${table.entityPath};
+package ${basePackage}.app.${lastPackage}.${table.entityPath};
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -20,11 +19,7 @@ import ${package.Entity}.${entity};
 import ${requestPackage}.${entity}Request;
 <#assign voPackage=package.Entity?replace("entity","vo")/>
 import ${voPackage}.${entity}VO;
-<#if restControllerStyle>
 import org.springframework.web.bind.annotation.RestController;
-<#else>
-import org.springframework.stereotype.Controller;
-</#if>
 <#--<#if superControllerClassPackage??>
 import ${superControllerClassPackage};
 </#if>-->
@@ -53,11 +48,7 @@ import ${cfg.baseControllerClass};
  * @author ${author}
  * @since ${date}
  */
-<#if restControllerStyle>
 @RestController
-<#else>
-@Controller
-</#if>
 @Api(value = "${table.comment}", tags = "${table.comment}接口")
 @RequestMapping("/<#if controllerMappingHyphenStyle??>${controllerMappingHyphen}<#else>${table.entityPath}</#if>")
 <#if kotlin>
@@ -75,12 +66,11 @@ public class ${table.controllerName} {
     /**
      * 查询${table.comment!}列表
      */
-    @ResponseBody
     @PostMapping("/list")
     @ApiOperation(value = "列表", notes = "列表")
     public R<IPage<${entity}VO>> list(@RequestBody ${entity}Request ${table.entityPath}Request) {
         ${entity} ${table.entityPath} = CommonUtils.convertBean(${table.entityPath}Request,${entity}.class);
-        QueryWrapper queryWrapper = new QueryWrapper<${entity}>().setEntity(${table.entityPath});
+        QueryWrapper<${entity}> queryWrapper = new QueryWrapper<${entity}>().setEntity(${table.entityPath});
         IPage<${entity}> iPage = ${table.entityPath}Service.page(new Page<>(${table.entityPath}Request.getCurrPage(),${table.entityPath}Request.getPageSize()),queryWrapper);
         IPage<${entity}VO> result = iPage.convert(new Function<${entity}, ${entity}VO>() {
             @Override
@@ -94,7 +84,6 @@ public class ${table.controllerName} {
     /**
      * 查询${table.comment!}详情
      */
-    @ResponseBody
     @PostMapping("/info")
     @ApiOperation(value = "详情", notes = "详情")
     public R<${entity}VO> info(@RequestBody ${entity}Request ${table.entityPath}Request) {
@@ -110,7 +99,6 @@ public class ${table.controllerName} {
     /**
      * 新增${table.comment!}
      */
-    @ResponseBody
     @PostMapping("/add")
     @ApiOperation(value = "新增", notes = "新增")
     public R save(@RequestBody ${entity}Request ${table.entityPath}Request) {
@@ -123,7 +111,6 @@ public class ${table.controllerName} {
     /**
      * 更新${table.comment!}数据
      */
-    @ResponseBody
     @PostMapping("/update")
     @ApiOperation(value = "更新", notes = "更新")
     public R update(@RequestBody ${entity}Request ${table.entityPath}Request) {
@@ -138,7 +125,6 @@ public class ${table.controllerName} {
     /**
      * 删除${table.comment!}数据
      */
-    @ResponseBody
     @PostMapping("/delete")
     @ApiOperation(value = "删除", notes = "删除")
     public R delete(@RequestBody ${entity}Request ${table.entityPath}Request) {

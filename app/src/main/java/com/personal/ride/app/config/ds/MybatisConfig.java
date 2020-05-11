@@ -28,7 +28,7 @@ import java.util.Properties;
 
 @EnableTransactionManagement
 @Configuration
-@MapperScan({"com.personal.ride.app.*.mapper"})
+@MapperScan({"com.personal.ride.service.*.mapper"})
 //@AutoConfigureAfter({ DataSourceAutoConfiguration.class})
 public class MybatisConfig {
 	@Value("${datasource.type}")

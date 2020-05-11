@@ -71,11 +71,11 @@ public class ApiMysqlGenerator {
 		// request父类
 		String requestSuperClass = "com.personal.core.common.request.BaseRequest";
 		// 转换工具类
-		String commonUtilsClass = "com.personal.core.common.util.CommonUtils";
+		String commonUtilsClass = "com.personal.core.common.utils.CommonUtils";
 		// 统一返回值类
 		String responseClass = "com.personal.ride.app.response.R";
 		// 导出工具类
-		String exportUtilsClass = "com.personal.core.common.util.EasyPoiUtil";
+		String exportUtilsClass = "com.personal.core.common.utils.EasyPoiUtil";
 
 		// String systemUserClass = "com.chuangrong.admin.system.entity.SysUser";
 

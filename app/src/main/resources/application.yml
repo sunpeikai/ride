@@ -10,5 +10,5 @@ server:
   servlet:
     # 项目contextPath
     context-path: /app
-cr-cwjy:
+ride:
   version: 1.0.0

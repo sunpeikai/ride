@@ -56,6 +56,17 @@
             <artifactId>jasypt-spring-boot-starter</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.personal</groupId>
+            <artifactId>common</artifactId>
+            <version>${global.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.personal</groupId>
+            <artifactId>service</artifactId>
+            <version>${global.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

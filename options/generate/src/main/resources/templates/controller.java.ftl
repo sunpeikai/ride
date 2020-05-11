@@ -1,7 +1,7 @@
 <#assign packageArray=package.Controller?split(".")/>
 <#assign basePackage=packageArray[0]+"."+packageArray[1]+"."+packageArray[2]/>
 <#assign lastPackage=packageArray[packageArray?size-1]/>
-package ${basePackage}.${lastPackage}.${table.entityPath};
+package ${basePackage}.admin.${lastPackage}.${table.entityPath};
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

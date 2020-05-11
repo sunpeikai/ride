@@ -51,7 +51,12 @@
         <dependency>
             <groupId>com.personal</groupId>
             <artifactId>common</artifactId>
-            <version>1.0.0</version>
+            <version>${global.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.personal</groupId>
+            <artifactId>service</artifactId>
+            <version>${global.version}</version>
         </dependency>
     </dependencies>
 

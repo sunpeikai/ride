@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.personal.ride.app", "com.personal.core"})
+@ComponentScan(basePackages = { "com.personal.ride.app", "com.personal.core" ,"com.personal.ride.service"})
 @EnableMethodCache(basePackages = "com.personal.ride.app.service")
 @EnableCreateCacheAnnotation
 public class AppApplication {

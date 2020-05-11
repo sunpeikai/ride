@@ -22,9 +22,9 @@ import java.util.*;
  * @author zhangqingqing
  * @version DataFilter, v0.1 2019/4/4 16:11
  */
-@Component
+//@Component
 @Slf4j
-@WebFilter(filterName = "DataFilter", urlPatterns = "/*")
+//@WebFilter(filterName = "DataFilter", urlPatterns = "/*")
 public class DataFilter implements Filter {
 
     private SystemConfig systemConfig = SpringUtil.getBean(SystemConfig.class);
