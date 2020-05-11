@@ -33,7 +33,7 @@ public class ApiMysqlGenerator {
 		AutoGenerator mpg = new AutoGenerator();
 
 		// ********* 可修改配置 begin **********
-		String dbUrl = "jdbc:mysql://localhost:3306/ride?useUnicode=true&characterEncoding=utf-8&tinyInt1isBit=false";
+		String dbUrl = "jdbc:mysql://localhost:3306/ride?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&tinyInt1isBit=false";
 		String dbUserName = "root";
 		String dbPassword = "spkzq521";
 
@@ -51,14 +51,17 @@ public class ApiMysqlGenerator {
 		// ********* 可修改配置 end **********
 
 		// 目标基础包名
-		String packageName = "com.personal.ride.app";
+        // service基础包名
+		String servicePackageName = "com.personal.ride.service";
+        // controller基础包名
+        String controllerPackageName = "com.personal.ride.app";
 
 		// 项目文件夹名称
-		String projectPackage = "cr-cwjy2";
+		String projectPackage = "app";
 		// 目标服务
-		String whichServe = "cr-service/cr-module-front";
+		String whichServe = "service";
 		// controller生成路径
-		String controllerServer = "cr-app";
+		String controllerServer = "app";
 		// 前端view生成路径
 		String baseLocation = "D:/codeGen/";
 
@@ -82,11 +85,11 @@ public class ApiMysqlGenerator {
 		File curDir = new File(curPath);
 		curPath = curDir.getParentFile().getParentFile().getParentFile().getParent();
 
-		curPath = curPath + File.separator + projectPackage + File.separator + whichServe;
+		curPath = curPath + File.separator + whichServe;
 		String projectPath = curPath;
 
 		gc.setOutputDir(projectPath + "/src/main/java");
-		gc.setAuthor("auto");
+		gc.setAuthor("sunpeikai");
 		gc.setOpen(false);
 		gc.setSwagger2(true);
 		mpg.setGlobalConfig(gc);
@@ -112,7 +115,7 @@ public class ApiMysqlGenerator {
 		// 包配置
 		PackageConfig pc = new PackageConfig();
 		pc.setModuleName(modubleName);
-		pc.setParent(packageName);
+		pc.setParent(servicePackageName);
 		pc.setEntity("entity");
 		pc.setService("service");
 		pc.setServiceImpl("service.impl");
@@ -149,9 +152,9 @@ public class ApiMysqlGenerator {
 		focList.add(new FileOutConfig("/templates/app-controller.java.ftl") {
 			@Override
 			public String outputFile(TableInfo tableInfo) {
-				// 使用controller服务所在地址，替换原来输出地址
+                // 使用controller服务所在地址，替换原来输出地址
 				String expand = gc.getOutputDir().replace(whichServe, controllerServer) + "/"
-						+ packageName.replaceAll("\\.", "/") + "/controller" + "/" + modubleName;
+						+ controllerPackageName.replaceAll("\\.", "/") + "/controller" + "/" + modubleName;
 				String entityFile = String.format((expand + File.separator + "%s" + ".java"),
 						tableInfo.getControllerName());
 				return entityFile;
@@ -162,7 +165,7 @@ public class ApiMysqlGenerator {
 		focList.add(new FileOutConfig("/templates/request.java.ftl") {
 			@Override
 			public String outputFile(TableInfo tableInfo) {
-				String expand = gc.getOutputDir() + "/" + packageName.replaceAll("\\.", "/") + "/" + modubleName
+				String expand = gc.getOutputDir() + "/" + servicePackageName.replaceAll("\\.", "/") + "/" + modubleName
 						+ "/request";
 				String entityFile = String.format((expand + File.separator + "%s" + "Request.java"),
 						tableInfo.getEntityName());
@@ -174,7 +177,7 @@ public class ApiMysqlGenerator {
 		focList.add(new FileOutConfig("/templates/vo.java.ftl") {
 			@Override
 			public String outputFile(TableInfo tableInfo) {
-				String expand = gc.getOutputDir() + "/" + packageName.replaceAll("\\.", "/") + "/" + modubleName
+				String expand = gc.getOutputDir() + "/" + servicePackageName.replaceAll("\\.", "/") + "/" + modubleName
 						+ "/vo";
 				String entityFile = String.format((expand + File.separator + "%s" + "VO.java"),
 						tableInfo.getEntityName());

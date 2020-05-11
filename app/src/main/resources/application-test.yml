@@ -70,7 +70,7 @@ datasource:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: -1
-  read1:
+  read:
     url: jdbc:p6spy:mysql://localhost:3306/ride?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
     username: cwjy_dev
     password: ZHXaW3@xIK

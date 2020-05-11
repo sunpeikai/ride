@@ -1,8 +1,8 @@
 package com.personal.ride.app.response;
 
-import com.chuangrong.app.constant.SYSConstant;
-import com.chuangrong.core.common.util.ObjectUtil;
-import com.chuangrong.core.common.util.StringUtils;
+import com.personal.core.common.utils.ObjectUtil;
+import com.personal.core.common.utils.StringUtils;
+import com.personal.ride.app.constants.SYSConstant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;

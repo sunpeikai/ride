@@ -1,6 +1,6 @@
 package com.personal.ride.app.response;
 
-import com.chuangrong.app.constant.SYSConstant;
+import com.personal.ride.app.constants.SYSConstant;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

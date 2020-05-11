@@ -7,7 +7,7 @@
     <logger name="springfox.documentation" level="ERROR"/>
 
     <!-- 叮叮输出 -->
-    <appender name="AsyncLogback" class="com.hyjf.framework.log.dingding.AsyncDingAppender">
+    <appender name="FileLogback" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <!-- 日志收集最低日志级别 -->
             <level>ERROR</level>
@@ -25,7 +25,7 @@
         <logger name="com.chuangrong" level="DEBUG"/>
 
         <root level="INFO">
-            <appender-ref ref="AsyncLogback" />
+            <appender-ref ref="FileLogback" />
         </root>
 
     </springProfile>
@@ -37,7 +37,7 @@
         <logger name="com.chuangrong" level="INFO"/>
 
         <root level="INFO">
-            <appender-ref ref="AsyncLogback" />
+            <appender-ref ref="FileLogback" />
         </root>
     </springProfile>
 
@@ -49,7 +49,7 @@
         <logger name="com.chuangrong" level="INFO"/>
 
         <root level="INFO">
-            <appender-ref ref="AsyncLogback" />
+            <appender-ref ref="FileLogback" />
         </root>
     </springProfile>
     <!-- 生产环境. -->
@@ -59,7 +59,7 @@
         <logger name="com.chuangrong" level="INFO"/>
 
         <root level="INFO">
-            <appender-ref ref="AsyncLogback" />
+            <appender-ref ref="FileLogback" />
         </root>
 
     </springProfile>

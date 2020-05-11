@@ -1,6 +1,6 @@
 package com.personal.ride.app.exception;
 
-import com.personal.ride.app.config.SYSConstant;
+import com.personal.ride.app.constants.SYSConstant;
 import com.personal.ride.app.response.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

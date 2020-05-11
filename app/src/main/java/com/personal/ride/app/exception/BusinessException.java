@@ -1,7 +1,7 @@
 package com.personal.ride.app.exception;
 
 import com.personal.core.common.utils.StringUtils;
-import com.personal.ride.app.config.SYSConstant;
+import com.personal.ride.app.constants.SYSConstant;
 import com.personal.ride.app.response.IResultCode;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

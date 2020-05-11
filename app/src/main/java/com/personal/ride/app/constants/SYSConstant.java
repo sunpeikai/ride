@@ -1,4 +1,4 @@
-package com.personal.ride.app.config;
+package com.personal.ride.app.constants;
 
 /**
  * 系统常量
@@ -105,4 +105,12 @@ public interface SYSConstant {
 	int PARKING_EXPIRE_TIME =15 * 60;
 
     String GLOBAL_EXCEPTION_MESSAGE = "服务器错误,请联系管理员";
+
+    /**
+     * 数据源控制优先级别(值越小优先级越高)，读方法切面
+     */
+    public static final String[] DATASOURCE_QUERY_PREFIX = {"select","query","count","search","get","find","validate","export"};
+    public static final int DATASOURCE_AOP_DS = 1;
+    public static final int DATASOURCE_AOP_TRANSACTION = 2;
+
 }

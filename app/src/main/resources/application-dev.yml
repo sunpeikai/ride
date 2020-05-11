@@ -34,10 +34,10 @@ app:
     device:
       android:
         code: 2
-        value: crpark-app-android-001
+        value: ride-app-android-001
       ios:
         code: 3
-        value: crpark-app-ios-001
+        value: ride-app-ios-001
     # 忽略登录
     notNeedLogin:
       urls: /home/overview,/register/submit,/register/notice,/user/login,/smscode/send,/smscode/check,/user/password/reset,/system/server/getBestServerAction,/building/list,/building/info,/building/cityList,/buildingParking/transferList,/buildingParking/transferInfo,/appVersion/versionCheck
@@ -49,7 +49,7 @@ datasource:
   type: com.alibaba.druid.pool.DruidDataSource
   # 事务和数据源切换切面
   aop:
-    scan: execution(* com.chuangrong..*Service.*(..))
+    scan: execution(* com.personal.ride..*Service.*(..))
 #主库
   write:
     url: jdbc:p6spy:mysql://localhost:3306/ride?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
@@ -70,7 +70,7 @@ datasource:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: -1
-  read1:
+  read:
     url: jdbc:p6spy:mysql://localhost:3306/ride?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
     username: cwjy_dev
     password: ZHXaW3@xIK
@@ -124,7 +124,7 @@ swagger:
 # ******************* 以下放业务参数配置  **********************
 ride:
   best:
-    host: https://devapp.maimaichewei.com
+    host: http://localhost:8072/app
   #支付模块请求链接
   pay:
     url: http://localhost:8073/cr-pay
