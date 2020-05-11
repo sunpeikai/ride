@@ -104,16 +104,19 @@ redis:
     password: Asds36Cs9HBF
 
 swagger:
-  enabled: true
-  title: cr-app
+  enable: true
+  host:
+  title: app
   description: Starter for swagger 2.x
   version: 1.0.0
+  base-package: com.personal.ride.app.controller
   license: Apache License, Version 2.0
   licenseUrl: https://www.apache.org/licenses/LICENSE-2.0.html
-  contact.name: framework
-  base-package: com.chuangrong.app.controller
-  base-path: /**
-  exclude-path: /error, /ops/**
+  contact.name: sunpeikai
+  contact.url: http://sandm.com.cn
+  contact.email: sunpeikai@yeah.net
+  #base-path: /**
+  #exclude-path: /error, /ops/**
   globalOperationParameters[0]:
     name: token
     description: token
